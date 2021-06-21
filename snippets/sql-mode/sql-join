@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: sql-join
+# key: jo
+# --
+join ${1:\{\{ref('$2')\}\}} ${3:m}
+$>on ${4:id} = $3.$4
+$0

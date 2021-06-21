@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: sql-select
+# key: sel
+# --
+select ${1:*} from ${2:\{\{ref('$3')\}\}}
