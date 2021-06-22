@@ -114,6 +114,11 @@ apps are not started from a shell."
 (setq initial-scratch-message "# Scratch
 > This buffer is for notes you don't want to save.")
 
+;; indentation support for sql-mode
+(use-package! sql-indent
+  :hook (sql-mode . sqlind-minor-mode)
+  :init
+  (setq sqlind-basic-offset 4))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
