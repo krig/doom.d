@@ -54,7 +54,7 @@ apps are not started from a shell."
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'visual)
 
 ;; general options
 (setq-default
@@ -74,6 +74,9 @@ apps are not started from a shell."
  js-indent-level 2
  typescript-indent-level 2
  css-indent-offset 2)
+
+;; CamelCase is a single word
+(global-subword-mode 1)
 
 ;; default list of projects
 (setq projectile-project-search-path '("~/src/"))
@@ -95,12 +98,22 @@ apps are not started from a shell."
 
 (map! :ne "M-/" #'comment-or-uncomment-region)
 
-;; prettier org-mode bullets
-(setq
- org-superstar-headline-bullets-list '("⁖" "◉" "○" "✸" "✿"))
+;; ask for buffer when splitting
+;; from https://tecosaur.github.io/emacs-config/config.html
+(setq evil-vsplit-window-right t
+      evil-split-window-below t)
+(defadvice! prompt-for-buffer (&rest _)
+  :after '(evil-window-split evil-window-vsplit)
+  (+ivy/switch-buffer))
+(setq +ivy-buffer-preview t)
 
 ;; various functions
 (load! "functions.el")
+
+(setq initial-major-mode 'markdown-mode)
+(setq initial-scratch-message "# Scratch
+> This buffer is for notes you don't want to save.")
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
