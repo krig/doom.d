@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dbt-ref
+# key: ref
+# --
+\{\{ref('$0')\}\}

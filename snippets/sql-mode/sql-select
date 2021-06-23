@@ -2,4 +2,4 @@
 # name: sql-select
 # key: sel
 # --
-select ${1:*} from ${2:\{\{ref('$3')\}\}}
+select ${1:*} from $2

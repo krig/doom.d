@@ -66,7 +66,8 @@ apps are not started from a shell."
  truncate-string-ellipsis "…"
  auto-save-default t
  line-spacing nil
- calendar-week-start-day 1)
+ calendar-week-start-day 1
+ avy-all-windows t)
 
 ;; set indents
 (setq-default
@@ -111,14 +112,21 @@ apps are not started from a shell."
 (load! "functions.el")
 
 (setq initial-major-mode 'markdown-mode)
-(setq initial-scratch-message "# Scratch
-> This buffer is for notes you don't want to save.")
+(setq initial-scratch-message "# Scratchpad")
 
 ;; indentation support for sql-mode
-(use-package! sql-indent
-  :hook (sql-mode . sqlind-minor-mode)
-  :init
-  (setq sqlind-basic-offset 4))
+;(use-package! sql-indent
+;  :hook (sql-mode . sqlind-minor-mode)
+;  :init
+;  (setq sqlind-basic-offset 4))
+
+;; simpler indentation mode for SQL
+(use-package! sql-smie-mode
+  :hook (sql-mode . sql-smie-mode))
+
+;; jinja2 templates in SQL
+(use-package! jinja2-minor-mode
+  :hook (sql-mode . jinja2-minor-mode))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

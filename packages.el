@@ -16,7 +16,15 @@
 ;  :recipe (:host github :repo "username/repo"))
 
 ;; SQL indent mode
-(package! sql-indent)
+;(package! sql-indent)
+
+(package! evil-tutor)
+
+(package! jinja2-minor-mode
+  :recipe (:host github :repo "krig/jinja2-minor-mode"))
+
+(package! sql-smie-mode
+  :recipe (:host github :repo "krig/sql-smie-mode"))
 
 ;; If the package you are trying to install does not contain a PACKAGENAME.el
 ;; file, or is located in a subdirectory of the repo, you'll need to specify
