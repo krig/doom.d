@@ -54,7 +54,7 @@ apps are not started from a shell."
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'visual)
+(setq display-line-numbers-type nil)
 
 ;; general options
 (setq-default
@@ -68,6 +68,10 @@ apps are not started from a shell."
  line-spacing nil
  calendar-week-start-day 1
  avy-all-windows t)
+
+;; vterm options
+(setq
+ vterm-always-compile-module t)
 
 ;; set indents
 (setq-default
@@ -127,6 +131,15 @@ apps are not started from a shell."
 ;; jinja2 templates in SQL
 (use-package! jinja2-minor-mode
   :hook (sql-mode . jinja2-minor-mode))
+
+(use-package! olivetti
+  :hook (markdown-mode . olivetti-mode)
+  :config
+  (setq olivetti-body-width 120))
+
+(use-package! zig-mode
+  :config
+  (setq zig-format-on-save nil))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: zig-catch
+# key: catch
+# --
+catch |$1| {
+    $0
+};
