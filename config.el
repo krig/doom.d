@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Kristoffer Grönlund"
-      user-mail-address "krig@koru.se")
+(setq user-full-name (or (getenv "NAME") "Kristoffer Grönlund")
+      user-mail-address (or (getenv "EMAIL") "krig@koru.se"))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -141,6 +141,12 @@ apps are not started from a shell."
   (setq zig-format-on-save nil))
 
 (solaire-global-mode +1)
+
+;; make _ part of words in python
+(add-hook! python-mode-hook (modify-syntax-entry ?_ "w"))
+
+(add-hook! python-mode
+  (setq python-shell-interpreter "python3"))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
