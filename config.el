@@ -27,7 +27,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-one)
 
 
 (defun set-exec-path-from-shell-PATH ()
@@ -132,14 +132,15 @@ apps are not started from a shell."
 (use-package! jinja2-minor-mode
   :hook (sql-mode . jinja2-minor-mode))
 
+(setq-default olivetti-body-width 120)
 (use-package! olivetti
-  :hook (markdown-mode . olivetti-mode)
-  :config
-  (setq olivetti-body-width 120))
+  :hook (markdown-mode . olivetti-mode))
 
 (use-package! zig-mode
   :config
   (setq zig-format-on-save nil))
+
+(solaire-global-mode +1)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

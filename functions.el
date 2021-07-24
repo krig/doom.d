@@ -66,3 +66,9 @@
   (interactive "r")
   (align-regexp start end
                 "\\(\\s-*\\)," 1 1 t))
+
+(defun align-comma-2 (start end)
+  "Align columns by comma (alternative version)"
+  (interactive "r")
+  (align-regexp start end
+                ",\\(\\s-*\\)" 1 1 t))
