@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name (or (getenv "NAME") "Kristoffer Grönlund")
-      user-mail-address (or (getenv "EMAIL") "krig@koru.se"))
+      user-mail-address (or (getenv "EMAIL") "k@ziran.se"))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -136,8 +136,7 @@ apps are not started from a shell."
 (use-package! olivetti
   :hook (markdown-mode . olivetti-mode))
 
-(use-package! zig-mode
-  :config
+(add-hook! zig-mode
   (setq zig-format-on-save nil))
 
 (solaire-global-mode +1)
