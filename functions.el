@@ -13,7 +13,7 @@
 ;; source: http://steve.yegge.googlepages.com/my-dot-emacs-file
 ;; Originally from stevey, adapted to support moving to a new directory.
 (defun rename-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME."
+  "Renames both current buffer and file it is visiting to NEW-NAME."
   (interactive
    (progn
      (if (not (buffer-file-name))
@@ -27,7 +27,7 @@
                                         (buffer-file-name))
                                        new-name)
                    (expand-file-name new-name)))
-  ;; If the file isn't saved yet, skip the file rename, but still update the
+  ;; If the file is not saved yet, skip the file rename, but still update the
   ;; buffer name and visited file.
   (if (file-exists-p (buffer-file-name))
       (rename-file (buffer-file-name) new-name 1))

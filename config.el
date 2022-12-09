@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Iosevka Term SS04" :size 16))
+(setq doom-font (font-spec :family "Fira Code" :size 15))
 (setq doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -54,7 +54,7 @@ apps are not started from a shell."
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type nil)
+(setq display-line-numbers-type 'relative)
 
 ;; general options
 (setq-default
