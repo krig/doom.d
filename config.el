@@ -9,6 +9,8 @@
 (setq user-full-name (or (getenv "NAME") "Kristoffer Grönlund")
       user-mail-address (or (getenv "EMAIL") "k@ziran.se"))
 
+(setq byte-compile-warnings nil)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -146,6 +148,8 @@ apps are not started from a shell."
 
 (add-hook! python-mode
   (setq python-shell-interpreter "python3"))
+
+(add-to-list 'auto-mode-alist '("\\.mcfunction\\'" . mcf-mode))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
